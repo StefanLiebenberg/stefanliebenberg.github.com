@@ -30,8 +30,6 @@ my.Component.prototype.exitDocument = function () {
 There is a cleaner approach to this, the handler is a disposable object, so we can easily create one just for the time the component is displayed on screen. When the component leaves the screen, disposing this handler will ensure that all event listeners are remove correctly.
 </p>
 
-
-
 {% highlight javascript %}
 /** @override */
 my.Component.prototype.enterDocument = function () {
