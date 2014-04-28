@@ -38,10 +38,12 @@ body, html {
 
       .post-content {
 
-        max-width: 1000px;
-
         p, div {
           margin: 10px;
+        }
+
+        div.highlight, & {
+          max-width: 800px;
         }
       }
 

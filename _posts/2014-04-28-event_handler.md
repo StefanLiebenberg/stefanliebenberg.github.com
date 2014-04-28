@@ -1,5 +1,5 @@
 ---
-title: The lifecycle Event Handler in Google Closure Components.
+title: Events Lifecycle in Google Closure Components.
 layout: post
 author: Stefan
 ---
