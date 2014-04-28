@@ -52,8 +52,9 @@ body .main .sidebar, html .main .sidebar {
 /* line 33, ../_sass/layout.scss */
 body .main .sidebar a, html .main .sidebar a {
   text-decoration: none;
+  color: maroon;
 }
-/* line 38, ../_sass/layout.scss */
+/* line 39, ../_sass/layout.scss */
 body .main .content, html .main .content {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
@@ -61,15 +62,15 @@ body .main .content, html .main .content {
   box-flex: 1;
   padding: 10px;
 }
-/* line 45, ../_sass/layout.scss */
+/* line 46, ../_sass/layout.scss */
 body .main .content .post-content p, body .main .content .post-content div, html .main .content .post-content p, html .main .content .post-content div {
   margin: 10px;
 }
-/* line 49, ../_sass/layout.scss */
+/* line 50, ../_sass/layout.scss */
 body .main .content .post-content div.highlight, body .main .content .post-content, html .main .content .post-content div.highlight, html .main .content .post-content {
   max-width: 800px;
 }
-/* line 56, ../_sass/layout.scss */
+/* line 57, ../_sass/layout.scss */
 body .footer, html .footer {
   text-align: center;
   padding: 5px;
@@ -77,15 +78,15 @@ body .footer, html .footer {
   background-color: rgba(0, 0, 0, 0.7);
   color: white;
 }
-/* line 57, ../_sass/layout.scss */
+/* line 58, ../_sass/layout.scss */
 body .footer:hover, html .footer:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
-/* line 68, ../_sass/layout.scss */
+/* line 69, ../_sass/layout.scss */
 body .footer a, body .footer a:visited, html .footer a, html .footer a:visited {
   color: silver;
 }
-/* line 72, ../_sass/layout.scss */
+/* line 73, ../_sass/layout.scss */
 body .footer a:hover, html .footer a:hover {
   color: white;
 }
