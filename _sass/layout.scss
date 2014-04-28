@@ -29,6 +29,10 @@ body, html {
       width: 200px;
       padding: 10px;
       margin-left: 100px;
+
+      a {
+        text-decoration: none;
+      }
     }
 
     .content {
@@ -59,12 +63,15 @@ body, html {
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
 
-    a, a:visited {
-      color: silver;
-    }
+    a {
 
-    a:hover {
-      color: white;
+      &, &:visited {
+        color: silver;
+      }
+
+      &:hover {
+        color: white;
+      }
     }
   }
 }
