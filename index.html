@@ -1,5 +1,63 @@
 ---
 layout: base
 ---
+<b>A fun canvas drawing:</b><br/>
+<canvas id="drawingBoard" width=700 height=600>
 
-not much to say
+</canvas>
+
+<script>
+    var Cat = function (canvas) {
+        this.canvas = canvas;
+        this.step = 0;
+        this.direction = 1;
+    };
+
+    Cat.prototype.drawCircle = function (context, x, y, r) {
+        context.beginPath();
+        var ran = Math.round(Math.random() * 100)
+        context.arc(x, y, r, ran, ran + 2, false);
+        context.lineWidth = 2;
+        context.strokeStyle = '#003300';
+        context.stroke();
+    }
+
+    Cat.prototype.clear = function () {
+        this.canvas.width = this.canvas.width;
+    }
+
+    Cat.prototype.play = function () {
+
+        this.step = 0;
+        var me = this;
+        this.timer = window.setInterval(function () {
+            me.draw();
+        }, 100);
+    }
+
+    Cat.prototype.draw = function () {
+        var context = this.canvas.getContext('2d');
+        var centerX = this.canvas.width / 2;
+        var centerY = this.canvas.height / 2;
+        this.clear();
+
+        for (var i = 0; i < this.step; i++) {
+            var offsetX = Math.random() * this.step;
+            var offsetY = Math.random() * this.step;
+            this.drawCircle(context, centerX + offsetX, centerY + offsetY,
+                            i * 10);
+        }
+
+        this.step += this.direction;
+
+        if(this.step > 30 && this.direction > 0) {
+            this.direction = -1;
+        } else if (this.step < 0 && this.direction < 1) {
+            this.direction = 1;
+        }
+
+    };
+
+
+    new Cat(document.getElementById("drawingBoard")).play();
+</script>
