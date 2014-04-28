@@ -29,7 +29,9 @@ body, html {
       width: 200px;
       padding: 10px;
       margin-left: 100px;
-
+      ul {
+        list-style-type: none;
+      }
       a {
         text-decoration: none;
         color: maroon;
