@@ -1,0 +1,11 @@
+---
+layout: base
+---
+
+<div class="post">
+    <h1>{{page.title}}</h1>
+    <b>{{ page.date | date: "%-d %B %Y" }} {% if page.author %} by {{ page.author}} {% endif %}</b>
+    <div class="post-content">
+        {{content}}
+    </div>
+</div>

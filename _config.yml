@@ -1,0 +1,6 @@
+pygments: true
+
+gems:
+- less
+- compass
+- sass

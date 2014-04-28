@@ -1,0 +1,7 @@
+.highlight, body.bp .highlight {
+  padding: 10px;
+  background: azure;
+  border: 1px solid lightblue;
+  margin: 10px;
+  width: 800px;
+}
