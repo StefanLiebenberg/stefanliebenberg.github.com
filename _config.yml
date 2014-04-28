@@ -1,5 +1,5 @@
 pygments: true
 markdown: kramdown
-
+permalink: /posts/:month-:day-:year/:title/index.html
 gems:
 - less
