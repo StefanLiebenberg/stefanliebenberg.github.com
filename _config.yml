@@ -1,6 +1,5 @@
 pygments: true
+markdown: kramdown
 
 gems:
 - less
-- compass
-- sass
