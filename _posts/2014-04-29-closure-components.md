@@ -2,7 +2,7 @@
 title: Google Closure Components
 layout: post
 author: Stefan
-published: false
+published: true
 ---
 
 In google closure, understanding the <code>goog.ui.Component</code> lifecycle
@@ -155,22 +155,60 @@ Let us consider a example where you have a component with composes a button whic
 
 {% highlight javascript %}
 
-  goog.provide('my.Component');
-  goog.require('goog.ui.Component');
+ /**
+  * @constructor
+  * @extends {goog.ui.Component}
+  */
+ my.Component = function () {
+    goog.base(this);
+
+    /** @type {goog.ui.Button} */
+    this.button = new goog.ui.Button();
+    this.registerDisposable(this.button);
+ };
+ goog.inherits(my.Component, goog.ui.Component);
+
+
 
   /**
-   * @constructor
+   * Creates a element like this
+   * <div>
+   *     <span>Title</span>
+   * </div>
+   * @override
    */
-  my.Component = function () {
-    goog.base(this);
-  };
-  goog.inherits(my.Component, goog.ui.Component);
+   my.Component.prototype.createDom = function () {
+     var domHelper = this.getDomHelper();
+     var element = domHelper.createDom('div');
+     var titleElement = domHelper.createDom('span');
+     titleElement.innerHTML = "Title";
+     element.appendChild(titleElement);
+     this.setElementInternal(element);
+   };
+
+   /**
+    * @Override
+    */
+    my.Component.prototype.decorateInternal = function (element) {
+      this.setElementInternal(element);
+    };
 
   /**
    * @override
    */
   my.Component.prototype.enterDocument = function () {
+    goog.base(this, 'enterDocument');
 
+    /** @type {goog.events.EventHandler} */
+    this.lifecycle = new goog.events.EventHandler(this);
+    this.registerDisposable(this.lifecycle);
+    this.lifecycle.listen(this.button, goog.ui.Components.EventType.ACTION, this.onButtonAction);
+
+    /** @type {Element} */
+    var buttonElement = this.getElementByClass(goog.getCssName("my-button"));
+    if(goog.dom.isElement(buttonElement)){
+      this.button.decorate(buttonElement);
+    }
   };
 
   /**
@@ -178,16 +216,21 @@ Let us consider a example where you have a component with composes a button whic
    */
   my.Component.prototype.exitDocument = function () {
 
+    this.button.exitDocument();
+
+    if(goog.isDefAndNotNull(this.lifecycle)) {
+      this.lifecycle.dispose();
+    }
+    goog.base(this, 'exitDocument');
   };
 
 
   /**
-   * @override
+   * @param {goog.events.Event} event
    */
-  my.Component.prototype.createDom = function () {
-
+  my.Component.prototype.onButtonAction = function (event) {
+     alert("Button Clicked");
   };
 
-
-
 {% endhighlight %}
+
