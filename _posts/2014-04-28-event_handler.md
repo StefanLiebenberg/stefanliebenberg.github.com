@@ -2,6 +2,7 @@
 title: Events Lifecycle in Google Closure Components.
 layout: post
 author: Stefan
+published: true
 ---
 
 <p>

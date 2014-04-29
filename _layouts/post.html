@@ -3,9 +3,12 @@ layout: base
 ---
 
 <div class="post">
-    <h1>{{page.title}}</h1>
+    <h2>{{page.title}}</h2>
     <b>{{ page.date | date: "%-d %B %Y" }} {% if page.author %} by {{ page.author}} {% endif %}</b>
     <div class="post-content">
+        {% unless page.published %}
+          <p class="alert">This is Draft Document</p>
+        {% endunless %}
         {{content}}
     </div>
 </div>
