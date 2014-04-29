@@ -19,6 +19,7 @@ Steps:
 ## Clone Project locally
 
 {% highlight bash %}
+  # clones repository into local folder.
   $ git clone <github-project-url>
 {% endhighlight %}
 
@@ -128,9 +129,37 @@ Steps:
 </project>
 {% endhighlight %}
 
+## Continues Interation.
+
+Add a <b>.travils.yml<b/> file:
+
+{% highlight yaml %}
+language: java
+{% endhighlight %}
+
+Then log into [travis-ci.org][2] and enable you're repository.
+
+## Deployment:
+
+### Snapshots
+
+{% highlight bash %}
+ # Deploys snapshot release
+ $ mvn clean deploy
+{% endhighlight %}
+
+### Releases
+
+{% highlight bash %}
+ # Prepares and checks the release locally
+ $ mvn clean release:clean release:prepare
+ # Uploads the release to sonatype.
+ $ mvn release:perform
+{% endhighlight %}
 
 
 [1]:https://help.github.com/articles/create-a-repo
+[2]:http://travis-ci.org/
 
 
 

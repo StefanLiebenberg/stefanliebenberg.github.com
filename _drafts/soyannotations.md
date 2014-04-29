@@ -1,9 +1,9 @@
 ---
-title: Soy Annotations
 layout: post
+title: Soy Annotations
+author: Stefan
+published: false
 ---
-
-<p class="alert">This is a draft document</p>
 
 <p class="notice">
   <b>Disclaimer:</b> I wrote Soy Annotations.
@@ -37,13 +37,12 @@ SoyAnnotations uses reflection to build a converters for each Class it encounter
   SoyData soyData = converter.convert("some string"); // returns a StringData instance of SoyData
 {% endhighlight %}
 
-| Annotation                                | Example                    | Description                                                                |
-|-------------------------------------------|----------------------------|----------------------------------------------------------------------------|
-| `@Soy(useOriginalToString = false)`       |                            |  The Soy annotation indicates a class that can be converted into soy data. |
-|                                           |                            |   |
-| `@Soy.Method(String)`                |                            |  The Soy.Method annotation            |
-| `@Soy.Field(String)`                 |                            |  The Soy.Method annotation            |
-| `@Soy.Template(String)`                 |                            |  The Soy.Method annotation            |
+| Annotation                           | Target | Description                                                                                |
+|:-------------------------------------|:------:|:-------------------------------------------------------------------------------------------|
+| `@Soy(useOriginalToString = false)`  | Type   | The Soy annotation indicates a class that can be converted into soy data.                  |
+| `@Soy.Method(String)`                | Method | Specifies that the method's result is can be used as a property on the resulting soy data. |
+| `@Soy.Field(String)`                 | Field  | Specifies that the field can be used as a property on the resulting SoyData                |
+| `@Soy.Template(String)`              | Type   | Specifies the template that is used when rendering the class.                              |
 
 
 ## Annotating Classes
@@ -66,8 +65,29 @@ SoyAnnotations uses reflection to build a converters for each Class it encounter
 
 ## Rendering Objects
 
+{% highlight java %}
+  RendererFactoryContext context = injector.getInstance(RendererFactoryContext.class);
+    context.render(new User());
+{% endhighlight %}
+
 ## Adding Custom Factories
 
+<p class="alert"><b>Missing:</b> Section on adding factories to injection.</p>
+
+
 ## Adding Custom Converters
+
+{% highlight java %}
+  /**
+   * This converter turns users into a greeting string
+   */
+  public class GreeterUserConverter implements Converter<User, String> {
+     @Override
+     public String convert(User user) {
+       return String.format("Hello %s, welcome", user.getName());
+     }
+  }
+{% endhighlight %}
+
 
 [1]:http://github.com/StefanLiebenberg/SoyAnnotations
