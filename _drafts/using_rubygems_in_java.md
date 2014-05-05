@@ -2,8 +2,10 @@
 title: Using Ruby gems in Java
 layout: post
 author: Stefan
-published: false
+published: true
 ---
+
+I recently built  [BlenderCss][1], a java project that needed to use the [Compass][2] gem. To solution was to utilize the gem via jruby.
 
 <b>Dependencies Section in pom.xml</b>
 
@@ -28,7 +30,7 @@ published: false
 
 <b>JRubyRunner.java</b>
 
-{% highlight java %}
+{% highlight java linenos %}
 
 import org.jruby.Ruby;
 import org.jruby.javasupport.JavaEmbedUtils;
@@ -41,7 +43,19 @@ public class JRubyRunner {
         List paths = new ArrayList();
         paths.add("classpath:gems/compass-0.12.2/lib");
         Ruby ruby = JavaEmbedUtils.initialize(paths);
-        ruby.getLoadService().require("compass");
+        ruby.getLoadService().require("compass");  // require "compass"
+        ruby.evalScriptlet("Compass::Exec::SubCommandUI.perform! :compile"); // perform a compile command.
     }
 }
 {% endhighlight %}
+
+
+
+
+<p class="info">
+  <b>Note:</b> jRuby is slow to initialize, so use it wisely.
+</p>
+
+
+[1]:http://github.com/StefanLiebenberg/BlenderCss
+[2]:http://compass-style.org/
