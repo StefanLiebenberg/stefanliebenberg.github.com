@@ -1,0 +1,44 @@
+/* line 1, ../../_sass/theme/dark.sass */
+body.theme-dark {
+  background: #332122;
+  color: white;
+}
+/* line 4, ../../_sass/theme/dark.sass */
+body.theme-dark h1, body.theme-dark h2, body.theme-dark h3 {
+  color: #4f99a2;
+}
+/* line 7, ../../_sass/theme/dark.sass */
+body.theme-dark .heading a {
+  text-decoration: none;
+}
+/* line 10, ../../_sass/theme/dark.sass */
+body.theme-dark .sidebar a {
+  color: maroon;
+  text-decoration: none;
+}
+/* line 13, ../../_sass/theme/dark.sass */
+body.theme-dark .footer {
+  border-width: 0px;
+  border-top-width: 1px;
+  border-style: solid;
+  border-color: white;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+}
+/* line 18, ../../_sass/theme/dark.sass */
+body.theme-dark .footer:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+/* line 24, ../../_sass/theme/dark.sass */
+body.theme-dark .footer a, body.theme-dark .footer a:visited {
+  color: silver;
+}
+/* line 26, ../../_sass/theme/dark.sass */
+body.theme-dark .footer a:hover {
+  color: white;
+}
+/* line 28, ../../_sass/theme/dark.sass */
+body.theme-dark .post-content .highlight {
+  color: black;
+}

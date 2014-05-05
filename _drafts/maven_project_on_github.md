@@ -2,10 +2,8 @@
 title: Maintain an Maven Central project on Github.
 layout: post
 author: Stefan
+published: false
 ---
-
-
-<p class="notice">This document is a Draft</p>
 
 Steps:
 

@@ -1,0 +1,15 @@
+---
+title: Posts
+layout: base
+---
+
+
+<h2>Posts</h2>
+
+{% for post in site.posts %}
+  <div>
+    <b><a href="{{ post.url }}">{{ post.title }}</a></b> {% unless post.published %} <span style="color:red;">DRAFT</span> {% endunless %}<br/>
+    <b class="date" style="font-size:10px;">{{ post.date | date: "%-d %B %Y" }}</b>
+    {{ post.excerpt }}
+  </div>
+{% endfor %}

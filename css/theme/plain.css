@@ -1,0 +1,27 @@
+/* line 3, ../../_sass/theme/plain.sass */
+.theme-plain .heading a {
+  text-decoration: none;
+}
+/* line 6, ../../_sass/theme/plain.sass */
+.theme-plain .sidebar a, .theme-plain .sidebar a:visited {
+  color: maroon;
+  text-decoration: none;
+}
+/* line 9, ../../_sass/theme/plain.sass */
+.theme-plain .footer {
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+}
+/* line 10, ../../_sass/theme/plain.sass */
+.theme-plain .footer:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+/* line 16, ../../_sass/theme/plain.sass */
+.theme-plain .footer a, .theme-plain .footer a:visited {
+  color: silver;
+}
+/* line 18, ../../_sass/theme/plain.sass */
+.theme-plain .footer a:hover {
+  color: white;
+}

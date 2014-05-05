@@ -14,7 +14,7 @@ body, html {
     height: 30px;
 
     a {
-      text-decoration: none;
+
     }
   }
 
@@ -33,12 +33,11 @@ body, html {
       ul {
         list-style-type: none;
         padding-left: 5px;
-        margin-left:0;
-
+        margin-left: 0;
 
         li {
-          margin-top:4px;
-
+          margin-top: 4px;
+          margin-bottom: 10px;
           vertical-align: middle;
           img {
             vertical-align: middle;
@@ -48,19 +47,20 @@ body, html {
           }
         }
       }
-      a {
-        text-decoration: none;
-        color: maroon;
+      span.date {
+        font-size: 8px;
+        margin: 0;
+        margin-botton: 2px;
+        display: block;
       }
+
     }
 
     .content {
       @include box-flex(1);
       padding: 10px;
 
-
       .post-content {
-
         p, div {
           margin: 10px;
         }
@@ -69,29 +69,11 @@ body, html {
           max-width: 800px;
         }
       }
-
     }
   }
   .footer {
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.8);
-    }
     text-align: center;
     padding: 5px;
-    background-color: black;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-
-    a {
-
-      &, &:visited {
-        color: silver;
-      }
-
-      &:hover {
-        color: white;
-      }
-    }
   }
 }
 
