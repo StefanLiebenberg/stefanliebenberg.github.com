@@ -1,13 +1,16 @@
 ---
-title: Using Ruby gems in Java
+title: Using JRuby in Maven Project
 layout: post
 author: Stefan
 published: true
 ---
 
-I recently built  [BlenderCss][1], a java project that needed to use the [Compass][2] gem. To solution was to utilize the gem via jruby.
+Integrating a ruby environment into a Java maven project is quite easy. I recently built [BlenderCss][1], a java project that needed to use the [Compass][2] gem. To solution was to utilize the gem via jruby.
 
-<b>Dependencies Section in pom.xml</b>
+
+### You will need..
+
+##### 1. Dependencies Section in pom.xml
 
 {% highlight xml %}
 ...
@@ -17,14 +20,16 @@ I recently built  [BlenderCss][1], a java project that needed to use the [Compas
     <artifactId>jruby</artifactId>
     <version>1.7.12</version>
 </dependency>
-
-<!-- a jar with the gem bundled  -->
-<dependency>
-    <groupId>org.nanoko.libs</groupId>
-    <artifactId>compass-gems</artifactId>
-    <version>0.12.2</version>
-</dependency>
 ...
+{% endhighlight %}
+
+#### 2. The ruby class you plan to use.
+
+
+{% highlight ruby %}
+class MyApi
+
+end
 {% endhighlight %}
 
 
